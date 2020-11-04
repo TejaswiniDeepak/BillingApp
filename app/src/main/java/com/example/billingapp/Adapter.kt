@@ -1,5 +1,6 @@
 package com.example.billingapp
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +11,8 @@ class Adapter(private val data:List<results>):RecyclerView.Adapter<Adapter.ItemV
     class ItemViewAdapter(itemView:View):RecyclerView.ViewHolder(itemView)
     {
         fun bind(serverData:results) {
-             itemView.tv_id.text= serverData.id.toString()
-             itemView.tv_barcode.text=serverData.barcode
+            itemView.tv_id.text= serverData.id.toString()
+            itemView.tv_barcode.text=serverData.barcode
         }
     }
 
@@ -22,7 +23,8 @@ class Adapter(private val data:List<results>):RecyclerView.Adapter<Adapter.ItemV
     }
 
     override fun onBindViewHolder(holder: ItemViewAdapter, position: Int) {
-holder.bind(data[position])
+        holder.bind(data[position])
+
     }
 
     override fun getItemCount(): Int = data.count()
