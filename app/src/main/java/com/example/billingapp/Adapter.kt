@@ -1,13 +1,12 @@
 package com.example.billingapp
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recycler_individual_row.view.*
 
-class Adapter(private val data:List<results>):RecyclerView.Adapter<Adapter.ItemViewAdapter>() {
+class Adapter(private val data:List<results>, private val cellClickListener: CellClickListener):RecyclerView.Adapter<Adapter.ItemViewAdapter>(){
     class ItemViewAdapter(itemView:View):RecyclerView.ViewHolder(itemView)
     {
         fun bind(serverData:results) {
@@ -24,8 +23,15 @@ class Adapter(private val data:List<results>):RecyclerView.Adapter<Adapter.ItemV
 
     override fun onBindViewHolder(holder: ItemViewAdapter, position: Int) {
         holder.bind(data[position])
+        val info =data[position].barcode
+        holder.itemView.setOnClickListener {
+            cellClickListener.onCellClickListener(info)
+        }
 
     }
 
     override fun getItemCount(): Int = data.count()
+}
+interface CellClickListener {
+    fun onCellClickListener(data: String)
 }

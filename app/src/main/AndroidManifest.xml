@@ -16,9 +16,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.BillingApp">
-        <activity android:name=".GetApiCall"></activity>
+        android:theme="@style/Theme.BillingApp"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".EditDetails"></activity>
+        <activity android:name=".GetApiCall" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,18 +1,20 @@
 package com.example.billingapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_get_api_call.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class GetApiCall : AppCompatActivity() {
+class GetApiCall : AppCompatActivity(),CellClickListener {
+    lateinit var BARCODE:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_api_call)
@@ -21,7 +23,7 @@ class GetApiCall : AppCompatActivity() {
     }
     private fun fetchData() {
 
-        var networkHelper=NetworkHelper(this)
+        val networkHelper=NetworkHelper(this)
         if(networkHelper.isNetworkConnected())
         {
             val request=RetrofitBuilder.buildService()
@@ -41,7 +43,7 @@ class GetApiCall : AppCompatActivity() {
                         recycler.setHasFixedSize(true)
                         recycler.itemAnimator=DefaultItemAnimator()
                         recycler.addItemDecoration(DividerItemDecoration(this@GetApiCall,1))
-                        recycler.adapter=Adapter(ResponseFromServer.results)
+                        recycler.adapter=Adapter(ResponseFromServer.results,this@GetApiCall)
 
 
 
@@ -101,4 +103,16 @@ class GetApiCall : AppCompatActivity() {
             Log.i("error2", "NoInternet")
         }
     }
+
+    override fun onCellClickListener(data: String) {
+
+
+        val intent=Intent(this,EditDetails::class.java)
+        intent.putExtra("BARCODE",data)
+
+        startActivity(intent)
+
+        finish()
+    }
+
 }
