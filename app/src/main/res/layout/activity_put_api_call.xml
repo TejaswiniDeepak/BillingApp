@@ -4,24 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditDetails">
+    tools:context=".PostApiCall">
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="324dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-android:visibility="invisible"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +41,7 @@ android:visibility="invisible"
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_id"
+                android:id="@+id/editText_put_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="ID" />
@@ -59,7 +51,7 @@ android:visibility="invisible"
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editText_barcode"
+                    android:id="@+id/editText_put_barcode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="BARCODE" />
@@ -69,7 +61,7 @@ android:visibility="invisible"
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editText_particulars"
+                        android:id="@+id/editText_put_particulars"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="PARTICULARS" />
@@ -79,7 +71,7 @@ android:visibility="invisible"
                         android:layout_height="match_parent">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editText_qty"
+                            android:id="@+id/editText_put_qty"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="QTY" />
@@ -89,7 +81,7 @@ android:visibility="invisible"
                             android:layout_height="match_parent">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/editText_rate"
+                                android:id="@+id/editText_put_rate"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="RATE" />
@@ -99,7 +91,7 @@ android:visibility="invisible"
                                 android:layout_height="match_parent">
 
                                 <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/editText_amount"
+                                    android:id="@+id/editText_put_amount"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="AMOUNT" />
@@ -111,7 +103,7 @@ android:visibility="invisible"
                                     android:layout_gravity="center"
                                     android:layout_marginTop="10dp"
                                     android:gravity="center"
-                                    android:text="Update" />
+                                    android:text="Add" />
 
 
 

@@ -3,12 +3,7 @@ package com.example.billingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +14,10 @@ class MainActivity : AppCompatActivity() {
        finish()
 
    }
+        btn_put.setOnClickListener{
+            startActivity(Intent(this,PostApiCall::class.java))
+            finish()
+        }
 
     }
 

@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BillingApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditDetails"></activity>
+        <activity android:name=".PostApiCall"></activity>
+        <activity android:name=".EditDetails" />
         <activity android:name=".GetApiCall" />
         <activity android:name=".MainActivity">
             <intent-filter>
