@@ -22,6 +22,10 @@ class EditDetails : AppCompatActivity() {
         button_update.setOnClickListener{
             //UpdateValue()
         }
+        button_close.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
     }
     fun getData(barcode:String?)
     {

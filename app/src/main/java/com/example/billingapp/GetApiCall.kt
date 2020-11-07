@@ -20,6 +20,7 @@ class GetApiCall : AppCompatActivity(),CellClickListener {
         setContentView(R.layout.activity_get_api_call)
 
         fetchData()
+
     }
     private fun fetchData() {
 
